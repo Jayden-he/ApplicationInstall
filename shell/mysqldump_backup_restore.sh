@@ -1,15 +1,15 @@
 #!/bin/bash
 #备份
-source_host="192.168.86.195"
+source_host="1.1.1.1"
 source_port=63307
-source_user="zt16335"
-source_password="zt16335zt16335."
-db="goodcang_toms_web_sbx"
-dest_host="192.168.87.201"
+source_user="xxxx"
+source_password="xxxx"
+db="xxxxx"
+dest_host="xxxxxx"
 dest_port=63307
 dest_user="root"
-dest_password="PEIkb3MrTcjKEdyjlm"
-project="OMS"
+dest_password="xxxx"
+project="xxxxx"
 date=`date +%Y%m%d%H%M%S`
 backdir=/data/mysqlbackup/$project/full_mysql/$date
 log_file=$backdir/full_mysql.log

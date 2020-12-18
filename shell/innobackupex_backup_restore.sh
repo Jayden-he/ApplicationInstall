@@ -1,15 +1,15 @@
 #!/bin/bash
 #备份
-source_host="192.168.86.195"
+source_host="1.1.1.1"
 source_port=63307
-source_user="zt16335"
-source_password="zt16335zt16335."
-db="goodcang_toms_web_sbx"
+source_user="xxxx"
+source_password="xxxx"
+db="xxxxxx"
 dest_host="localhost"
 dest_port=63307
 dest_user="root"
-dest_password="PEIkb3MrTcjKEdyjlm"
-project="OMS"
+dest_password="xxxxx"
+project="xxxx"
 date=`date +%Y%m%d%H%M%S`
 backdir=/data/mysqlbackup/$project/full_mysql/$date
 log_file=/data/mysqlbackup/$project/full_mysql/full_mysql.log
@@ -40,7 +40,6 @@ innobackupex_backup(){
     innobackupex --defaults-file=$cnf --user=$source_user --password=$source_password --host=$source_host --port=$source_port --socket=$socket --lock-ddl-per-table --parallel=4 --no-timestamp $backdir > $log_file 2>&1
   else
     innobackupex --defaults-file=$cnf --user=$source_user --password=$source_password --host=$source_host --port=$source_port --databases=$db --socket=$socket --lock-ddl-per-table  --parallel=4  --no-timestamp $backdir > $log_file 2>&1
-#    /usr/bin/innobackupex --defaults-file=/etc/my.cnf --user=zt16335 --password=zt16335zt16335. --port=63307 --socket=/data/mysql/data/mysql.pid --lock-ddl-per-table  --parallel=4  --no-timestamp /data/mysqlbackup/OMS/full_mysql/20200929170238
   fi
   if [ $? -ne 0 ]; then
       echo "innobackupex 备份失败"
