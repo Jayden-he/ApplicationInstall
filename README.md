@@ -1,1 +1,1 @@
-# ApplicationInstall
+init
