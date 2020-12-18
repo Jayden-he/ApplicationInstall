@@ -48,7 +48,7 @@ make_install(){
 }
 
 create_conf(){
-  zabbix_server_ip=58.22.126.38,218.66.5.97,112.5.141.249,58.22.120.126,192.168.9.70
+  zabbix_server_ip=1.1.1.1,2.2.2.2
   sed -i -e "/Server=127/s/127.0.0.1/$zabbix_server_ip/" $1/zabbix_agentd.conf
   sed -i -e "/^Hostname/s/^.*\$/Hostname=`hostname`/" $1/zabbix_agentd.conf
   sed -i -e "/ServerActive=127/s/127.0.0.1/$zabbix_server_ip/" $1/zabbix_agentd.conf
